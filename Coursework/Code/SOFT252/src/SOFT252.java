@@ -11,32 +11,17 @@ public class SOFT252 {
 
     public static void main(String[] args) throws IOException, ParseException {
         
-        patient p = new patient();
+        //JSONObject patObj = patientToJSON(p);
         
-        p.setName("adam");
-        p.setAddress("4gpa");
-        p.setEmail("adam@email.com");
-        p.setPhoneNumber("999");
-        p.setupUserId("p");
-        p.setPassword("123");
-        p.setAge(19);
-        p.setSex("Male");
-        
-        System.out.println(p.getName());
-        System.out.println(p.getUserId());
-        System.out.println(p.getAge());
-        
-        JSONObject patObj = patientToJSON(p);
-        
-        try (FileWriter file = new FileWriter("C:\\Users\\aparkin1\\Documents\\file1.txt")) {
-            file.write(patObj.toJSONString());
-            System.out.println("Successfully Copied JSON Object to File...");
-            System.out.println("\nJSON Object: " + patObj);
-        }
+        //try (FileWriter file = new FileWriter("jsonStores\\patients.txt")) {
+        //    file.write(patObj.toJSONString());
+        //    System.out.println("Successfully Copied JSON Object to File...");
+        //    System.out.println("\nJSON Object: " + patObj);
+        //}
         
         JSONParser parser = new JSONParser();
         
-        Object obj = parser.parse(new FileReader("C:\\Users\\aparkin1\\Documents\\file1.txt"));
+        Object obj = parser.parse(new FileReader("jsonStores\\patients.txt"));
         JSONObject userJSON = (JSONObject) obj;
         
         patient decodedPat = JSONToPatient(userJSON);

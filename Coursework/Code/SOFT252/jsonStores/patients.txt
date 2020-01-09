@@ -1,0 +1,1 @@
+{"password":"123","address":"4gpa","phoneNumber":"999","sex":"Male","name":"adam","userId":"p","email":"adam@email.com","age":19}
