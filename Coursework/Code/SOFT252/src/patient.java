@@ -67,5 +67,34 @@ public class patient extends user {
         
         
     }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Object[] getAppointments() {
+        return appointments;
+    }
+
+    public prescription[] getPrescriptions() {
+        return prescriptions;
+    }
+
+    public Object[] getReviewsMade() {
+        return reviewsMade;
+    }
+    
     
 }
