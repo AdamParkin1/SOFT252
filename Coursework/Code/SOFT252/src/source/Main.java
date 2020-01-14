@@ -10,14 +10,14 @@ public class Main {
 
     public static void main(String[] args) throws IOException, FileNotFoundException, ParseException {
         Data root = Data.getInstance();
-        root.setup();
+        Data.setup();
         
         new MainMenu().setVisible(true);
         
         Runtime.getRuntime().addShutdownHook(new Thread() {            
             public void run() {                
                 try {       
-                    root.saveUsers();
+                    Data.saveUsers();
                 } catch (IOException ex) {
                     Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                 }

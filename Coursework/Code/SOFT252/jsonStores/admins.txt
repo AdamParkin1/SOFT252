@@ -1,1 +1,3 @@
 {"password":"e","address":"4 gpa","phoneNumber":"12345","name":"Adam","userId":"A0","email":"adam.parkin@students.plymouth.ac.uk"}
+{"password":"d","address":"4 gpa","phoneNumber":"12345","name":"Adam","userId":"A1","email":"adam.parkin@students.plymouth.ac.uk"}
+{"password":"c","address":"4 gpa","phoneNumber":"12345","name":"Adam","userId":"A2","email":"adam.parkin@students.plymouth.ac.uk"}
