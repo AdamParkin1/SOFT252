@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="source">
+  <ClassDiagramComponents>
+    <Class name="Admin" package="source" visibility="public" xPosition="19.0" yPosition="587.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="createAdminAccount" returnType="void" visibility="public"/>
+        <Method name="modifyAccounts" returnType="void" visibility="public"/>
+        <Method name="viewDoctor" returnType="void" visibility="public"/>
+        <Method name="provideFeedback" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Appointment" package="source" visibility="public" xPosition="1590.0" yPosition="54.0">
+      <Fields>
+        <Field name="patient" type="Object" visibility="package"/>
+        <Field name="doctor" type="Object" visibility="package"/>
+        <Field name="notes" type="String" visibility="package"/>
+        <Field name="time" type="String" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getPatient" returnType="Object" visibility="public"/>
+        <Method name="setPatient" returnType="void" visibility="public">
+          <Argument type="Object" name="patient"/>
+        </Method>
+        <Method name="getDoctor" returnType="Object" visibility="public"/>
+        <Method name="setDoctor" returnType="void" visibility="public">
+          <Argument type="Object" name="doctor"/>
+        </Method>
+        <Method name="getNotes" returnType="String" visibility="public"/>
+        <Method name="setNotes" returnType="void" visibility="public">
+          <Argument type="String" name="notes"/>
+        </Method>
+        <Method name="getTime" returnType="String" visibility="public"/>
+        <Method name="setTime" returnType="void" visibility="public">
+          <Argument type="String" name="time"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Data" package="source" visibility="public" isFinal="true" xPosition="130.0" yPosition="966.0">
+      <Fields>
+        <Field name="instance" type="Data" visibility="private" isStatic="true"/>
+        <Field name="patients" type="Patient[]" visibility="public" isStatic="true"/>
+        <Field name="doctors" type="Doctor[]" visibility="public" isStatic="true"/>
+        <Field name="admins" type="Admin[]" visibility="public" isStatic="true"/>
+        <Field name="secretaries" type="Secretary[]" visibility="public" isStatic="true"/>
+        <Field name="activeID" type="String" visibility="public" isStatic="true"/>
+        <Field name="nextID" type="int[]" visibility="private" isStatic="true"/>
+        <Field name="requests" type="User[]" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="setup" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="appendList" returnType="Object[]" visibility="private" isStatic="true">
+          <Argument type="Object[]" name="arr1"/>
+          <Argument type="Object[]" name="arr2"/>
+        </Method>
+        <Method name="saveUsers" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="loadUsers" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="AdminToJSON" returnType="JSONObject" visibility="private" isStatic="true">
+          <Argument type="Admin" name="inObj"/>
+        </Method>
+        <Method name="SecretaryToJSON" returnType="JSONObject" visibility="private" isStatic="true">
+          <Argument type="Secretary" name="inObj"/>
+        </Method>
+        <Method name="DoctorToJSON" returnType="JSONObject" visibility="private" isStatic="true">
+          <Argument type="Doctor" name="inObj"/>
+        </Method>
+        <Method name="PatientToJSON" returnType="JSONObject" visibility="private" isStatic="true">
+          <Argument type="Patient" name="inObj"/>
+        </Method>
+        <Method name="JSONToAdmin" returnType="Admin" visibility="private" isStatic="true">
+          <Argument type="JSONObject" name="inObj"/>
+        </Method>
+        <Method name="JSONToSecretary" returnType="Secretary" visibility="private" isStatic="true">
+          <Argument type="JSONObject" name="inObj"/>
+        </Method>
+        <Method name="JSONToDoctor" returnType="Doctor" visibility="private" isStatic="true">
+          <Argument type="JSONObject" name="inObj"/>
+        </Method>
+        <Method name="JSONToPatient" returnType="Patient" visibility="private" isStatic="true">
+          <Argument type="JSONObject" name="inObj"/>
+        </Method>
+        <Method name="setActiveID" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="requestAccount" returnType="void" visibility="public" isStatic="true">
+          <Argument type="User" name="user"/>
+        </Method>
+        <Method name="findByID" returnType="int" visibility="public" isStatic="true">
+          <Argument type="String" name="ID"/>
+        </Method>
+        <Method name="checkLogin" returnType="String" visibility="public" isStatic="true"/>
+        <Method name="increment" returnType="void" visibility="public" isStatic="true">
+          <Argument type="int" name="num"/>
+        </Method>
+        <Method name="getNextID" returnType="int" visibility="public" isStatic="true">
+          <Argument type="int" name="num"/>
+        </Method>
+        <Method name="getNextIDArray" returnType="int[]" visibility="public" isStatic="true"/>
+        <Method name="popObject" returnType="User[]" visibility="public" isStatic="true">
+          <Argument type="User[]" name="array"/>
+          <Argument type="User" name="item"/>
+        </Method>
+        <Method name="getInstance" returnType="Data" visibility="public" isStatic="true"/>
+        <Method name="createUser" returnType="User[]" visibility="public" isStatic="true">
+          <Argument type="User[]" name="array"/>
+          <Argument type="User" name="user"/>
+        </Method>
+        <Method name="createAdmin" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Admin" name="user"/>
+        </Method>
+        <Method name="createSecretary" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Secretary" name="user"/>
+        </Method>
+        <Method name="createDoctor" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Doctor" name="user"/>
+        </Method>
+        <Method name="createPatient" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Patient" name="user"/>
+        </Method>
+        <Method name="pushObject" returnType="Prescription[]" visibility="public" isStatic="true">
+          <Argument type="Prescription[]" name="array"/>
+          <Argument type="Prescription" name="prescription"/>
+        </Method>
+        <Method name="setInstance" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Data" name="instance"/>
+        </Method>
+        <Method name="getPatients" returnType="Patient[]" visibility="public" isStatic="true"/>
+        <Method name="getNextID" returnType="int[]" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="Doctor" package="source" visibility="public" xPosition="478.0" yPosition="462.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="viewAppointments" returnType="void" visibility="public"/>
+        <Method name="makeNotes" returnType="void" visibility="public"/>
+        <Method name="patientHistory" returnType="void" visibility="public"/>
+        <Method name="createAppointment" returnType="void" visibility="public"/>
+        <Method name="prescribeMedicine" returnType="void" visibility="public"/>
+        <Method name="createMedicine" returnType="void" visibility="public"/>
+        <Method name="viewDoctor" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Id" package="source" visibility="public" xPosition="526.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="findNum" returnType="int" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+        <Method name="getNewID" returnType="String" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Main" package="source" visibility="public" xPosition="1220.0" yPosition="566.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Medicine" package="source" visibility="public" xPosition="1220.0" yPosition="318.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="notes" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="orderMedicine" returnType="void" visibility="package"/>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getNotes" returnType="String" visibility="public"/>
+        <Method name="setNotes" returnType="void" visibility="public">
+          <Argument type="String" name="notes"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Patient" package="source" visibility="public" xPosition="732.0" yPosition="587.0">
+      <Fields>
+        <Field name="appointments" type="Appointment[]" visibility="private"/>
+        <Field name="prescriptions" type="Prescription[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="option"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="reviewDoctor" returnType="void" visibility="private">
+          <Argument type="Doctor" name="doc"/>
+          <Argument type="String" name="feedback"/>
+          <Argument type="int" name="rating"/>
+        </Method>
+        <Method name="viewDoctor" returnType="void" visibility="public">
+          <Argument type="Doctor" name="doc"/>
+        </Method>
+        <Method name="requestAppointment" returnType="void" visibility="public">
+          <Argument type="Doctor" name="doc"/>
+          <Argument type="String" name="notes"/>
+          <Argument type="String" name="time"/>
+        </Method>
+        <Method name="addPrescription" returnType="void" visibility="public">
+          <Argument type="Prescription" name="input"/>
+        </Method>
+        <Method name="viewHistory" returnType="void" visibility="public"/>
+        <Method name="viewPrescription" returnType="String" visibility="public"/>
+        <Method name="requestTermination" returnType="void" visibility="public"/>
+        <Method name="viewPatient" returnType="void" visibility="public"/>
+        <Method name="getId" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PendingAppointments" package="source" visibility="public" isFinal="true" xPosition="1220.0" yPosition="141.0">
+      <Fields>
+        <Field name="pendingAppointments" type="Appointment[]" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="addAppointment" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Appointment" name="item"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Prescription" package="source" visibility="public" xPosition="1130.0" yPosition="881.0">
+      <Fields>
+        <Field name="patient" type="Object" visibility="private"/>
+        <Field name="doctor" type="Object" visibility="private"/>
+        <Field name="medicine" type="Object" visibility="private"/>
+        <Field name="notes" type="String" visibility="private"/>
+        <Field name="quantity" type="int" visibility="private"/>
+        <Field name="Dosage" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getPatient" returnType="Object" visibility="public"/>
+        <Method name="setPatient" returnType="void" visibility="public">
+          <Argument type="Object" name="patient"/>
+        </Method>
+        <Method name="getDoctor" returnType="Object" visibility="public"/>
+        <Method name="setDoctor" returnType="void" visibility="public">
+          <Argument type="Object" name="doctor"/>
+        </Method>
+        <Method name="getMedicine" returnType="Object" visibility="public"/>
+        <Method name="setMedicine" returnType="void" visibility="public">
+          <Argument type="Object" name="medicine"/>
+        </Method>
+        <Method name="getNotes" returnType="String" visibility="public"/>
+        <Method name="setNotes" returnType="void" visibility="public">
+          <Argument type="String" name="notes"/>
+        </Method>
+        <Method name="getQuantity" returnType="int" visibility="public"/>
+        <Method name="setQuantity" returnType="void" visibility="public">
+          <Argument type="int" name="quantity"/>
+        </Method>
+        <Method name="getDosage" returnType="String" visibility="public"/>
+        <Method name="setDosage" returnType="void" visibility="public">
+          <Argument type="String" name="Dosage"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Review" package="source" visibility="public" xPosition="797.0" yPosition="185.0">
+      <Fields>
+        <Field name="patient" type="Patient" visibility="package"/>
+        <Field name="doctor" type="Doctor" visibility="package"/>
+        <Field name="rating" type="int" visibility="private"/>
+        <Field name="feedback" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getPatient" returnType="Patient" visibility="public"/>
+        <Method name="setPatient" returnType="void" visibility="public">
+          <Argument type="Patient" name="patient"/>
+        </Method>
+        <Method name="getDoctor" returnType="Doctor" visibility="public"/>
+        <Method name="setDoctor" returnType="void" visibility="public">
+          <Argument type="Doctor" name="doctor"/>
+        </Method>
+        <Method name="getRating" returnType="int" visibility="public"/>
+        <Method name="setRating" returnType="void" visibility="public">
+          <Argument type="int" name="rating"/>
+        </Method>
+        <Method name="getFeedback" returnType="String" visibility="public"/>
+        <Method name="setFeedback" returnType="void" visibility="public">
+          <Argument type="String" name="feedback"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Secretary" package="source" visibility="public" xPosition="226.0" yPosition="587.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="approvePatientAccounts" returnType="void" visibility="public"/>
+        <Method name="viewAppointmentRequests" returnType="void" visibility="public"/>
+        <Method name="setupAppointment" returnType="void" visibility="public"/>
+        <Method name="giveMedicine" returnType="void" visibility="public"/>
+        <Method name="removePatient" returnType="void" visibility="public">
+          <Argument type="Patient" name="patient"/>
+        </Method>
+        <Method name="approvePatientRemoval" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="User" package="source" visibility="public" xPosition="198.0" yPosition="20.0">
+      <Fields>
+        <Field name="name" type="String" visibility="protected"/>
+        <Field name="address" type="String" visibility="protected"/>
+        <Field name="email" type="String" visibility="protected"/>
+        <Field name="phoneNumber" type="String" visibility="protected"/>
+        <Field name="id" type="String" visibility="protected"/>
+        <Field name="password" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="getAddress" returnType="String" visibility="public"/>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+        <Method name="getPhoneNumber" returnType="String" visibility="public"/>
+        <Method name="getId" returnType="String" visibility="public"/>
+        <Method name="getPassword" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="setAddress" returnType="void" visibility="public">
+          <Argument type="String" name="address"/>
+        </Method>
+        <Method name="setEmail" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="setPhoneNumber" returnType="void" visibility="public">
+          <Argument type="String" name="phoneNumber"/>
+        </Method>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="setPassword" returnType="void" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="iAccountCreateReq" package="source" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Methods>
+        <Method name="update" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Interface name="iObserver" package="source" visibility="public" xPosition="1590.0" yPosition="390.0">
+      <Methods/>
+    </Interface>
+    <Interface name="modifyAccounts" package="source" visibility="public" xPosition="1590.0" yPosition="496.0">
+      <Methods>
+        <Method name="setup" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="source.Review" target="source.Doctor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="source.Secretary" target="source.User"/>
+    <IsRelation name="is" source="source.Doctor" target="source.User"/>
+    <HasRelation name="instance" source="source.Data" target="source.Data" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="doctor" source="source.Review" target="source.Doctor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="source.Data" target="source.Secretary" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="source.Patient" target="source.User"/>
+    <IsRelation name="is" source="source.User" target="source.Id"/>
+    <UseRelation source="source.Review" target="source.Patient" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="source.Data" target="source.User" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="source.Admin" target="source.User"/>
+    <UseRelation source="source.Data" target="source.Patient" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="source.Data" target="source.Doctor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="source.Data" target="source.Prescription" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="source.PendingAppointments" target="source.Appointment" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="patient" source="source.Review" target="source.Patient" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="source.Data" target="source.Data" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="source.Patient" target="source.Prescription" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="source.Patient" target="source.Doctor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="source.Data" target="source.Admin" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="source.Secretary" target="source.Patient" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

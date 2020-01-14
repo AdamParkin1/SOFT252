@@ -1,1 +1,1 @@
-{"password":"123","address":"4gpa","phoneNumber":"999","sex":"Male","name":"adam","userId":"p","email":"adam@email.com","age":19}
+{"password":"q","address":"2 gpa","phoneNumber":"12354","name":"John","userId":"P0","email":"john.parkin@students.plymouth.ac.uk"}
